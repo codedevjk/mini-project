@@ -20,7 +20,7 @@ def color_quantisation(img,k):
     result=result.reshape(img.shape)
     return result
 
-img=read_img('./Ironman.jpg')
+img=read_img('./jk.jpg')
 line_wdt=9
 blur_value=7
 totalColors=4
@@ -29,4 +29,4 @@ edgeImg=edge_detection(img,line_wdt,blur_value)
 img=color_quantisation(img,totalColors)
 blurred=cv2.bilateralFilter(img,d=7,sigmaColor=200,sigmaSpace=200)
 cartoon=cv2.bitwise_and(blurred,blurred,mask=edgeImg)
-cv2.imwrite('Ironcartoon.jpg',cartoon)
+cv2.imwrite('jk.jpg',cartoon)
